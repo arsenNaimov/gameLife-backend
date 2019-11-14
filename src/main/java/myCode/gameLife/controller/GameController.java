@@ -5,7 +5,7 @@ import myCode.gameLife.service.GameService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/gameLife")
+@RequestMapping("/game")
 public class GameController {
 
     private final GameService gameService;
