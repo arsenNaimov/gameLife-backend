@@ -6,16 +6,12 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name = "CELL")
+@Table(name = "CELLS")
 public class Cell {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private int x;
     private int y;
     private boolean life;
-
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
-    @JoinColumn(name = "game_id")
-    private Game game;
 }

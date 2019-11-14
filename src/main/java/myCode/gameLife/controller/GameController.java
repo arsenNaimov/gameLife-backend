@@ -15,7 +15,7 @@ public class GameController {
     }
 
     @GetMapping
-    public Game getGame() {
+    public Game getOldGame() {
         return gameService.getOldGame();
     }
 

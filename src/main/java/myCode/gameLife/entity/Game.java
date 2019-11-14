@@ -3,7 +3,9 @@ package myCode.gameLife.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+
 
 @Entity
 @Data
@@ -14,6 +16,7 @@ public class Game {
     private Long id;
     private int playingFieldSize;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "game")
-    private List<Cell> cells;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "game_id")
+    private Set<Cell> cells = new HashSet<>();
 }
