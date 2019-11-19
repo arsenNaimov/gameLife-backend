@@ -4,6 +4,7 @@ import myCode.gameLife.entity.Game;
 import myCode.gameLife.service.GameService;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/game")
 public class GameController {
